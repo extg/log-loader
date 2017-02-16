@@ -1,7 +1,7 @@
 
 
 var colors = require('colors');
-var h = require('./helpers');
+var h = require('./params');
 
 var PAD_ID = 10;
 var PAD_INDEX = 4;

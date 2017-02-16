@@ -1,49 +1,57 @@
 # log-loader
 
+<h2 align="center">Install</h2>
+
+```bash
+npm install --save-dev log-loader
+```
+
+<h2 align="center">Usage</h2>
+
+
+### Via webpack config (recommended)
+
+**webpack.config.js**
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [ 
+          'style-loader',
+          'log-loader?id=after-css&showSource=true',
+          'css-loader',
+          'log-loader?id=before-css&showSource=true',
+        ]
+      }
+    ]
+  }
+}
+```
+
+<h2 align="center">Options</h2>
+
+Options may passed via query params too.
+ 
+### Defaults
+
 ```js
 {
-// ...
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                include: [
-                    path.resolve(__dirname, 'app')
-                ],
-                exclude: [
-                    path.resolve(__dirname, 'node_modules')
-                ],
-                use: [
-                    'log-loader?showIndex=true&id=second',
-                    'log-loader?showIndex=true&id=first'
-                ]
-            },
-            {
-                test: /\.test\.js$/,
-                include: [
-                    path.resolve(__dirname, 'app')
-                ],
-                exclude: [
-                    path.resolve(__dirname, 'node_modules')
-                ],
-                use: [
-                    {
-                        loader: 'log-loader?id=queryID',
-                        options: {
-                            id: 'optionID',
-                            showIndex: true,
-                            showSource: true,
-                            showPitch: true,
-                            showNextLoader: true,
-                            showPrevLoader: true
-                        }
-                    },
-                    {
-                        loader: 'log-loader?id=queryID'
-                    }
-                ]
-            }
-        ]
+  loader: 'log-loader',
+  options: {
+    id: '',
+    showIndex: false,
+    showSource: false,
+    showPitch: false,
+    showNextLoader: false,
+    showPrevLoader: false,
+    pad: {
+      id: 10,
+      index: 4,
+      loader: 15,
+      file: 35
     }
-};
+  }
+}
 ```
