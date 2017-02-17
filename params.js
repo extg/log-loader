@@ -40,9 +40,9 @@ function getParams(loaderContext) {
  * @returns {String}
  */
 function getLoaderNameByPath(pathToIndexJs) {
-    var loaderDir = path.dirname(pathToIndexJs);
+    var loaderDir = path.relative('node_modules', pathToIndexJs);
 
-    return loaderDir.split(path.sep).pop();
+    return loaderDir.split(path.sep).shift();
 }
 
 /**
@@ -53,7 +53,7 @@ function getLoaderNameByPath(pathToIndexJs) {
 function getNextLoader(loaderContext) {
     var currentTndex = loaderContext.loaderIndex;
     var loaders = loaderContext.loaders;
-    var nextLoader = loaders[currentTndex + 1] || null;
+    var nextLoader = loaders[currentTndex - 1] || null;
 
     if (nextLoader) {
         return ' -> ' + getLoaderNameByPath(nextLoader.path);
@@ -70,10 +70,10 @@ function getNextLoader(loaderContext) {
 function getPrevLoader(loaderContext) {
     var currentTndex = loaderContext.loaderIndex;
     var loaders = loaderContext.loaders;
-    var prevLoader = loaders[currentTndex - 1] || null;
+    var prevLoader = loaders[currentTndex + 1] || null;
 
     if (prevLoader) {
-        return ' -> ' + getLoaderNameByPath(prevLoader.path);
+        return getLoaderNameByPath(prevLoader.path)+ ' -> ';
     }
 
     return '';
