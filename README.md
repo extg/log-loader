@@ -47,7 +47,7 @@ Options may passed via query params too.
     showNextLoader: false,
     showPrevLoader: false,
     pad: {
-      id: 10,
+      id: 15,
       index: 4,
       loader: 15,
       file: 35

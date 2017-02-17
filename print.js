@@ -3,7 +3,7 @@
 var colors = require('colors');
 var h = require('./params');
 
-var PAD_ID = 10;
+var PAD_ID = 15;
 var PAD_INDEX = 4;
 var PAD_LOADER = 15;
 var PAD_FILE = 35;
