@@ -28,6 +28,8 @@ function getParams(loaderContext) {
         showPrevLoader: params.showPrevLoader,
         showNextLoader: params.showNextLoader,
         showIndex: params.showIndex,
+        callback: options.callback,
+        callbackPitch: options.callbackPitch,
         pad: params.pad || {}
     }
 }

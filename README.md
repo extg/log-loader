@@ -46,12 +46,18 @@ Options may passed via query params too.
     showPitch: false,
     showNextLoader: false,
     showPrevLoader: false,
+    
+    // string sizes
     pad: {
       id: 15,
       index: 4,
       loader: 15,
       file: 35
-    }
+    },
+    
+    // only option params, this = loader context
+    callback: function (source) { return source; },
+    callbackPitch: function (remainingRequest, precedingRequest, data) {}
   }
 }
 ```
