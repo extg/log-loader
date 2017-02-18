@@ -1,9 +1,20 @@
 # Proto
 
+![](screenshot.png)
+
 ## Getting Started
 
+for see result of screenshot, follow next steps
 ```
+git clone https://github.com/extg/log-loader
+cd log-loader/examples/basic
 npm install
+node_modules/.bin/webpack
+```
+
+
+run build
+```
 npm run build
 npm run server
 ```
@@ -12,19 +23,3 @@ for dev
 ```
 npm run watch
 ```
-
-
-## loaders order
-
-```bash
- ./app/index.js                       [.js]           -> babel-loader [pitch]
- ./app/index.js                       [.js]           -> babel-loader
- ./app/documentWrite.js               [.js]           -> babel-loader [pitch]
- ./app/foo/foo.test.js                [.js]           -> babel-loader [pitch]
- ./app/foo/index.js                   [.js]           -> babel-loader [pitch]
- ./app/documentWrite.js               [.js]           -> babel-loader
- ./app/foo/foo.test.js                [.test.js 1]
- ./app/foo/foo.test.js                [.test.js 2]
- ./app/foo/foo.test.js                [.js]           -> babel-loader
- ./app/foo/index.js                   [.js]           -> babel-loader
- ```
