@@ -1,6 +1,6 @@
 
-
-var getParams = require('./params').getParams;
+var grey = require('colors/safe').grey;
+var getParams = require('./get-params');
 var print = require('./print');
 
 module.exports = logLoader;
@@ -13,7 +13,7 @@ function logLoader(source) {
     print(this);
 
     if (params.showSource) {
-        console.log(source.grey)
+        console.log(grey(source))
     }
 
     if (typeof callback === 'function') {
@@ -29,7 +29,7 @@ function logLoaderPitch() {
     var callback = params.callbackPitch;
 
     if (params.showPitch) {
-        print(this);
+        print(this, true/*isPitch*/);
     }
 
     if (typeof callback === 'function') {
