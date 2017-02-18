@@ -1,6 +1,6 @@
 {
   "name": "log-loader",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "loader for debugging",
   "main": "index.js",
   "repository": {
