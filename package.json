@@ -1,11 +1,11 @@
 {
   "name": "log-loader",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "loader for debugging",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:0777144/log-loader.git"
+    "url": "git@github.com:extg/log-loader.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
