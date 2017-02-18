@@ -1,5 +1,8 @@
 # log-loader
 
+![](./examples/basic/screenshot.png)
+
+
 <h2 align="center">Install</h2>
 
 ```bash
