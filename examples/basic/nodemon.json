@@ -1,0 +1,8 @@
+{
+  "verbose": true,
+  "delay": "500",
+  "ignore": [
+    "webpack.config.js",
+    "dist"
+  ]
+}
