@@ -14,7 +14,8 @@ function getParams(loaderContext) {
     var query = loader.parseQuery(loaderContext.query);
     var options = loader.getLoaderConfig(loaderContext);
     var params = Object.assign(query, options);
-    var filePath = path.relative(loaderContext.options.context, loaderContext.resourcePath);
+    var context = loaderContext.rootContext || loaderContext.context || loaderContext.options.context;
+    var filePath = path.relative(context, loaderContext.resourcePath);
 
     return {
         id: params.id ? `[${params.id}]` : '',
